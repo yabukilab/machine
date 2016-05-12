@@ -15,6 +15,8 @@ git clone https://github.com/yabukilab/machine.git
 ## 起動
 
 ```
+c:
+cd /vagrant/machine
 vagrant up
 ```
 
