@@ -1,3 +1,6 @@
+#Timezone
+timedatectl set-timezone Asia/Tokyo
+
 apt-get update
 
 #Apache HTTP Server

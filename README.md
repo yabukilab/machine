@@ -22,6 +22,8 @@ vagrant up
 
 `vagrant`コマンドが使えない場合，PATHを有効にするために，コマンドプロンプトを立ち上げ直す。Windowsを再起動してもいい。
 
+http://localhost/info.php や http://localhost/phpmyadmin/ （ユーザ名：root，パスワード：pass）にアクセスできることを確認する。
+
 あとは[計算機環境の構築](https://github.com/yabukilab/main/blob/master/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%89.md)のとおり。
 
 ## やり直したいときは
@@ -44,14 +46,10 @@ rmdir /S /Q machine
 
 `provision.sh`で以下を実行している。
 
+* タイムゾーンをAsia/Tokyoに設定する。
 * Apache2, MySQL, phpMyAdminをインストールする。
 * MySQLのrootのパスワードを`pass`にする。
 
-## やっていないこと
+その他
 
-### タイムゾーンの設定
-
-次のコマンドで起動するダイアログで，Asia→Tokyoとする。
-```
-sudo dpkg-reconfigure tzdata
-```
+* html/info.php を配備する。
