@@ -4,7 +4,7 @@ timedatectl set-timezone Asia/Tokyo
 apt-get update
 
 #Apache HTTP Server
-apt-get install -y apahce2
+apt-get -y install apahce2
 
 #MySQL
 MYSQL_ROOT_PASS="pass"
