@@ -25,6 +25,7 @@ apt-get -y install phpmyadmin
 
 #display PHP errors
 sed -i -e 's/display_errors = Off/display_errors = On/' /etc/php5/apache2/php.ini
+service apache2 restart
 
 #Others
 apt-get -y install git jq
