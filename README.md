@@ -46,20 +46,6 @@ rmdir /S /Q machine
 
 ## やっていること
 
-`Vafrantfile`で以下の設定を行っている。
-
-* ホストのhttp://localhost/ へのアクセスを，ゲストのhttp://localhost/ へのアクセスにする。
- * ホスト側でFirewallを通過できるようにする必要があるかもしれない。
- * 別のソフトウェア（例：Skype）が80番ポートを使っているとうまくいかない。`netstat -nao`で80番ポートを使っているソフトウェアのPIDを調べ，タスクマネージャでそのソフトウェアを突き止めるとよい。
-* ゲストのドキュメントルート（`/var/www/html`）を`c:/vagrant/machine/html`にする。
-* 初めての`vagrant up`や，停止時の`vagrant up --provision`で`provision.sh`を実行する。
-
-`provision.sh`で以下を実行している。
-
-* タイムゾーンをAsia/Tokyoに設定する。
-* Apache2, MySQL, phpMyAdminをインストールする。
-* MySQLのrootのパスワードを`pass`にする。
-
-その他
-
-* html/info.php を配備する。
+* `Vafrantfile`に記述したこと
+* `provision.sh`に記述したこと
+* html/info.php の配備
