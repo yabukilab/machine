@@ -16,7 +16,7 @@ vagrant plugin install vagrant-cachier
 
 ```
 c:
-cd /
+cd \
 mkdir vagrant
 cd vagrant
 git clone https://github.com/yabukilab/machine.git
@@ -26,7 +26,7 @@ git clone https://github.com/yabukilab/machine.git
 
 ```
 c:
-cd /vagrant/machine
+cd \vagrant\machine
 vagrant up
 ```
 
@@ -38,7 +38,7 @@ vagrant up
 
 ```
 c:
-cd /vagrant/machine
+cd \vagrant\machine
 vagrant destroy
 cd ..
 rmdir /S /Q machine
