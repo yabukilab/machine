@@ -9,10 +9,6 @@ echo "mysql-server mysql-server/root_password password $MYSQL_ROOT_PASS" | debco
 echo "mysql-server mysql-server/root_password_again password $MYSQL_ROOT_PASS" | debconf-set-selections
 apt-get -y install mysql-server
 
-#to access MySQL from host
-sed -i -e 's/^bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/my.cnf
-service mysql restart
-
 #phpMyAdmin
 echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
 echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
