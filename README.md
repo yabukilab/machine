@@ -48,4 +48,4 @@ rmdir /S /Q machine
 
 * `Vafrantfile`に記述したこと
 * `provision.sh`に記述したこと
-* html/info.php の配備
+* `html/info.php`の配備
