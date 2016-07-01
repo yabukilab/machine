@@ -3,6 +3,10 @@ timedatectl set-timezone Asia/Tokyo
 
 apt-get update
 
+#SSL
+a2enmod ssl
+a2ensite default-ssl
+
 #MySQL
 MYSQL_ROOT_PASS="pass"
 echo "mysql-server mysql-server/root_password password $MYSQL_ROOT_PASS" | debconf-set-selections
