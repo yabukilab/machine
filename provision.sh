@@ -3,10 +3,6 @@ timedatectl set-timezone Asia/Tokyo
 
 apt-get update
 
-#SSL
-a2enmod ssl
-a2ensite default-ssl
-
 #MySQL
 MYSQL_ROOT_PASS="pass"
 echo "mysql-server mysql-server/root_password password $MYSQL_ROOT_PASS" | debconf-set-selections
@@ -23,6 +19,10 @@ sudo php5enmod mcrypt
 
 #display PHP errors
 sed -i -e 's/display_errors = Off/display_errors = On/' /etc/php5/apache2/php.ini
+
+#SSL
+a2enmod ssl
+a2ensite default-ssl
 service apache2 restart
 
 #others
