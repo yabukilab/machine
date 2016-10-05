@@ -46,6 +46,6 @@ rmdir /S /Q machine
 
 ## やっていること
 
-* `Vafrantfile`に記述したこと
-* `provision.sh`に記述したこと
+* `Vafrantfile`を参照。仮想マシンに割り当てるメモリを増やしたい場合は、このファイルを修正する。
+* `provision.sh`を参照。
 * `html/info.php`の配備
