@@ -26,5 +26,5 @@ a2ensite default-ssl
 service apache2 restart
 
 #others
-apt-get -y install git jq
+apt-get -y install git jq cifs-utils
 apt-get -y autoremove
