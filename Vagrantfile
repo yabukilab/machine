@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -23,9 +23,9 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network:forwarded_port, guest: 80, host: 80, host_ip: "127.0.0.1"
-  config.vm.network:forwarded_port, guest: 443, host: 443, host_ip: "127.0.0.1"
-  config.vm.network:forwarded_port, guest: 5432, host: 5432, host_ip: "127.0.0.1"
+  config.vm.network:forwarded_port, guest: 80, host: 80
+  config.vm.network:forwarded_port, guest: 443, host: 443
+  config.vm.network:forwarded_port, guest: 5432, host: 5432
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
