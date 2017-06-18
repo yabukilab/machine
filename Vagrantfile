@@ -77,4 +77,9 @@ Vagrant.configure(2) do |config|
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
   end
+
+  # Using the host's resolver as a DNS proxy in NAT mode
+  # config.vm.provider :virtualbox do |vb|
+  #  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  # end
 end
