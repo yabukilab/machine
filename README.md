@@ -20,6 +20,11 @@ cd \
 mkdir vagrant
 cd vagrant
 git clone https://github.com/yabukilab/machine.git
+
+cd machine
+vagrant plugin install vagrant-cachier
+vagrant plugin install vagrant-vbguest
+vagrant plugin install vagrant-disksize
 ```
 
 ## 起動
