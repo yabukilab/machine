@@ -82,7 +82,7 @@ rmdir /S /Q machine
 
 **↑Pythonをインストールしてから↑**
 
-MS R Open（Intel MKLを使うから高速）を導入し，Jupyter notebookで使えるようにする。（Rが動けばいいだけなら`sudo apt install r-base-core`）
+MS R Open（BLASとしてIntel MKLを使う，最速）を導入し，Jupyter notebookで使えるようにする。（Rが動けばいいだけなら`sudo apt install r-base-core`，高速化のために`libopenblas-base`も入れておくといい。）
 
 構築：`sudo bash /vagrant/setup-r.sh`
 
