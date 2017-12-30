@@ -13,6 +13,9 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/xenial64"
+  if Vagrant.has_plugin?("vagrant-disksize")
+    config.disksize.size = "100GB"
+  end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -26,6 +29,7 @@ Vagrant.configure(2) do |config|
   config.vm.network:forwarded_port, guest: 80, host: 80
   config.vm.network:forwarded_port, guest: 443, host: 443
   config.vm.network:forwarded_port, guest: 5432, host: 5432
+  config.vm.network:forwarded_port, guest: 8888, host: 8888
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -53,6 +57,7 @@ Vagrant.configure(2) do |config|
   #
   #   # Customize the amount of memory on the VM:
     vb.memory = "1024"
+    vb.cpus = 2
   end
   #
   # View the documentation for the provider you are using for more
@@ -74,12 +79,10 @@ Vagrant.configure(2) do |config|
   # SHELL
   config.vm.provision "shell", path: "provision.sh"
 
-  if Vagrant.has_plugin?("vagrant-cachier")
-    config.cache.scope = :box
-  end
-
   # Using the host's resolver as a DNS proxy in NAT mode
   # config.vm.provider :virtualbox do |vb|
-  #  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  #   vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   # end
+
+  config.vbguest.auto_update = false
 end

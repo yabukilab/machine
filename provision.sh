@@ -1,30 +1,11 @@
 #Timezone
 timedatectl set-timezone Asia/Tokyo
 
-apt-get update
+echo 'Acquire::http::Proxy "http://10.100.192.4:3142/";' > /etc/apt/apt.conf.d/02proxy
 
-#MySQL
-MYSQL_ROOT_PASS="pass"
-echo "mysql-server mysql-server/root_password password $MYSQL_ROOT_PASS" | debconf-set-selections
-echo "mysql-server mysql-server/root_password_again password $MYSQL_ROOT_PASS" | debconf-set-selections
-apt-get -y install mysql-server
+#apt update
 
-#phpMyAdmin
-echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
-echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
-echo "phpmyadmin phpmyadmin/mysql/admin-pass password $MYSQL_ROOT_PASS" | debconf-set-selections
-echo "phpmyadmin phpmyadmin/mysql/app-pass password ''" | debconf-set-selections
-apt-get -y install phpmyadmin
-sudo php5enmod mcrypt
-
-#display PHP errors
-sed -i -e 's/display_errors = Off/display_errors = On/' /etc/php5/apache2/php.ini
-
-#SSL
-a2enmod ssl
-a2ensite default-ssl
-service apache2 restart
-
-#others
-apt-get -y install git jq cifs-utils
-apt-get -y autoremove
+echo "alias ls='ls -F'" >> /home/ubuntu/.bashrc
+echo '. ~/.bashrc' >> /home/ubuntu/.bash_profile
+chown ubuntu:ubuntu /home/ubuntu/.bash_profile
+chown ubuntu:ubuntu /home/ubuntu/.bashrc
