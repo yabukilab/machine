@@ -25,6 +25,8 @@ cd vagrant
 git clone https://github.com/yabukilab/machine.git
 ```
 
+簡単な初期設定を`provision.sh`で行っている。「`echo 'Acquire::http::Proxy "http://10.100.192.4:3142/";' > /etc/apt/apt.conf.d/02proxy`」は研究室にあるパッケージのキャッシュサーバを利用するための設定だから，研究室外で使うときは，この行を削除（あるいはコメントアウト）しておく。
+
 ## 起動
 
 ```
@@ -52,9 +54,9 @@ rmdir /S /Q machine
 
 ## 補足
 
-* `Vafrantfile`を参照。仮想マシンに割り当てるメモリやディスクを増やしたい場合は、このファイルを修正する。
-* 簡単な初期設定を`provision.sh`で行っている。「`echo 'Acquire::http::Proxy "http://10.100.192.4:3142/";' > /etc/apt/apt.conf.d/02proxy`」は研究室にあるパッケージのキャッシュサーバを利用するための設定だから，研究室外で使うときは，仮想マシンの起動後に，`sudo rm /etc/apt/apt.conf.d/02proxy`として無効にすること。（この行をコメントアウトしてもよい。）
-* UbuntuのBoxの更新は`vagrant box update`。
+* 仮想マシンの仕様を`Vafrantfile`に記述している。仮想マシンに割り当てるメモリやディスクを増やしたい場合は、このファイルを修正する。
+* 簡単な初期設定を`provision.sh`で行っている。起動後のカスタマイズはこのファイルで行う。
+* 仮想マシンのひな形（Box）の更新は`vagrant box update`。
 
 ## 各種開発環境
 
