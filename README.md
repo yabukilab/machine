@@ -58,11 +58,13 @@ rmdir /S /Q machine
 
 ## 各種開発環境
 
+作業の詳細はsetupにあるスクリプトで確認すること。
+
 ### ウェブアプリケーション構築環境
 
 「プロジェクトマネジメント演習（PM演習）」のための開発環境である。
 
-構築：`sudo bash /vagrant/setup-lamp.sh`（必要なら`sudo apt update`をやってから）
+構築：`sudo bash /vagrant/setup/lamp.sh`（必要なら`sudo apt update`をやってから）
 
 動作確認：ホスト側のブラウザから[http://localhost/info.php](http://localhost/info.php)や[http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)（ユーザ名：root，パスワード：pass）にアクセスできることを確認する。
 
@@ -72,37 +74,39 @@ rmdir /S /Q machine
 
 「プログラム言語とプログラミング」のための開発環境である。
 
-構築：`sudo bash /vagrant/setup-python.sh`（必要なら`sudo apt update`をやってから）
+構築：`sudo bash /vagrant/setup/python.sh`（必要なら`sudo apt update`をやってから）
 
-動作確認：ログインし直すか`source ~/.bash_profile`とした後で，`python --version`の結果が`Python 3.6.3 :: Anaconda, Inc.`などとなっていればよい。
+動作確認：`python --version`の結果が`Python 3.6.3 :: Anaconda, Inc.`などとなっていればよい。
 
-### R（Jupyter notebook）
+### R
 
-「データマイニング入門」のための開発環境である。
+2つの選択肢を用意している。いずれも，コンソールで起動するコマンドは`R`。
 
-**↑Pythonをインストールしてから↑**
+* （標準）R（+OpenBLAS）：`sudo bash /vagrant/setup/r.sh`
+* （高速）MS R Open（+Intel MKL）：`sudo bash /vagrant/setup/msr.sh`
 
-MS R Open（BLASとしてIntel MKLを使う，最速）を導入し，Jupyter notebookで使えるようにする。（Rが動けばいいだけなら`sudo apt install r-base-core`，高速化のために`libopenblas-base`も入れておくといい。）
+動作確認：
 
-構築：`sudo bash /vagrant/setup-r.sh`
-
-#### 動作確認（R）
-
-`R`としてRを起動したときに，次のように表示される。
+MS R Openを起動すると次のように表示される。
 
 ```
 Microsoft R Open 3.4.2
 The enhanced R distribution from Microsoft
 Microsoft packages Copyright (C) 2017 Microsoft Corporation
 
-Using the Intel MKL for parallel mathematical computing (using 2 cores).
+Using the Intel MKL for parallel mathematical computing (using 4 cores).
 ```
 
-#### 動作確認（Jupyter notebook）
+#### Jupyter notebook for R
 
-Jupyter notebookを起動する。
+「データマイニング入門」のための開発環境である。
 
-1. `source ~/.bash_profile`
-1. `jn`
+**PythonとRをインストールしてから，以下を実行する。**
+
+構築：`sudo bash /vagrant/setup/jupyter.sh`
+
+動作確認：
+
+`jn`でJupyter notebookを起動する（`jn`はalias）。
 
 ホスト側のブラウザで，http://localhost:8888 にアクセスし，「Password or token:」に`pass`と入力して利用する。使い方：式を入力してShift+Enter。
