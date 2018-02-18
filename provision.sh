@@ -13,5 +13,5 @@ chown vagrant:vagrant /home/vagrant/.bash_profile
 
 #for instant execution
 echo "alias R='R --no-save'" >> /home/vagrant/.bashrc
-echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> /home/vagrant/.bash_profile
 echo "alias jn='jupyter notebook --no-browser --ip=0.0.0.0'" >> /home/vagrant/.bashrc
+echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> /home/vagrant/.bash_profile
