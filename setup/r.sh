@@ -5,6 +5,13 @@ gpg -a --export E084DAB9 | apt-key add -
 
 apt update
 
+cat > /home/vagrant/.Rprofile << EOS
+local({r <- getOption("repos")
+     r["CRAN"] <- "https://cloud.r-project.org"
+     options(repos=r)})
+EOS
+chown vagrant:vagrant /home/vagrant/.Rprofile
+
 #gfortran is for caret (kernlab)
 apt -y install r-base-core libopenblas-base gfortran
 
