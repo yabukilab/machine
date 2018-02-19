@@ -57,6 +57,7 @@ rmdir /S /Q machine
 * 仮想マシンの仕様を`Vafrantfile`に記述している。仮想マシンに割り当てるメモリやディスクを増やしたい場合は、このファイルを修正する。
 * 簡単な初期設定を`provision.sh`で行っている。起動後のカスタマイズはこのファイルで行う。
 * 仮想マシンのひな形（Box）の更新は`vagrant box update`。うまく動かないときはこれを試すといいかもしれない。
+* `C:\Users\ユーザ名\.vagrant.d\boxes\ubuntu-VAGRANTSLASH-xenial64\metadata_url`の中身が`https://vagrantcloud.com/ubuntu/xenial64`になっていないと，Boxの更新ができないかもしれない。（参考：https://github.com/hashicorp/vagrant/issues/9442 ）
 
 ## 各種開発環境
 
