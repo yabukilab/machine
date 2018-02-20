@@ -13,7 +13,7 @@ vagrant plugin install vagrant-vbguest
 vagrant plugin install vagrant-disksize
 ```
 
-ただし，Guest Additionの自動更新は無効にしてあるため，共有フォルダが使えないなど，不具合が出た場合は，`vagrant vbguest --status`でバージョンの違いを確認し，`vagrant vbguest --do install`で更新，`vagrant vbguest --do start`で起動すること。
+ただし，Guest Additionの自動更新はVagrantfileで無効にしてあるため，共有フォルダが使えないなど，不具合が出た場合は，`vagrant vbguest --status`でバージョンの違いを確認し，`vagrant vbguest --do install`で更新，`vagrant vbguest --do start`で起動すること。
 
 仮想マシンを用意する。
 
