@@ -9,3 +9,6 @@ echo "devtools::install_git('git://github.com/IRkernel/IRkernel.git')" | R --sla
 su -l -c 'echo "IRkernel::installspec()" | R --slave' vagrant
 su -l -c 'jupyter notebook --generate-config -y' vagrant
 echo "c.NotebookApp.token = 'pass'" >> /home/vagrant/.jupyter/jupyter_notebook_config.py
+
+#JupyterLab
+/home/vagrant/anaconda3/bin/conda install -c conda-forge jupyterlab -y

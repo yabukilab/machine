@@ -1,3 +1,5 @@
+apt update
+
 #Anaconda3 5.0.1
 if [ ! -e '/vagrant/Anaconda3-5.1.0-Linux-x86_64.sh' ]; then
   cd /vagrant

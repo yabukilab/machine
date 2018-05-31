@@ -14,7 +14,7 @@ echo "phpmyadmin phpmyadmin/mysql/app-pass password ''" | debconf-set-selections
 apt -y install phpmyadmin
 
 #display PHP errors
-sed -i -e 's/display_errors = Off/display_errors = On/' /etc/php/7.0//apache2/php.ini
+sed -i -e 's/display_errors = Off/display_errors = On/' /etc/php/7.2/apache2/php.ini
 
 #SSL
 a2enmod ssl
