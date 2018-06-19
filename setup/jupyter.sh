@@ -1,6 +1,6 @@
 apt update
 
-apt install -y libssl-dev libcurl4-openssl-dev
+apt install -y libssl-dev libcurl4-openssl-dev zlib1g-dev
 ln -s /bin/sed /usr/bin/sed
 
 echo "install.packages('devtools')" | R --slave
@@ -12,3 +12,5 @@ echo "c.NotebookApp.token = 'pass'" >> /home/vagrant/.jupyter/jupyter_notebook_c
 
 #JupyterLab
 /home/vagrant/anaconda3/bin/conda install -c conda-forge jupyterlab -y
+
+mkdir -p /vagrant/jupyter

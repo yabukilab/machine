@@ -1,9 +1,14 @@
-version="3.4.4"
+version="3.5.0"
 
 apt update
 
 #gfortran is for caret (kernlab)
 apt -y install build-essential gfortran
+
+# https://github.com/Microsoft/microsoft-r-open/issues/34#issuecomment-371030682
+wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
+  && dpkg -i /tmp/libpng12.deb \
+  && rm /tmp/libpng12.deb
 
 #Microsoft R Open
 if [ ! -e /vagrant/microsoft-r-open-$version.tar.gz ]; then

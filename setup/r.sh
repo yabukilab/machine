@@ -1,4 +1,4 @@
-echo 'deb http://cloud.r-project.org/bin/linux/ubuntu xenial/' >> /etc/apt/sources.list
+echo 'deb http://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' >> /etc/apt/sources.list
 
 gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9
 gpg -a --export E084DAB9 | apt-key add -
