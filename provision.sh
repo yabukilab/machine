@@ -6,6 +6,7 @@ echo 'Acquire::http::Proxy "http://10.100.192.4:3142/";' > /etc/apt/apt.conf.d/0
 #apt update
 
 echo "alias ls='ls -F'" >> /home/vagrant/.bashrc
+echo "export PS1='\u@\h:\w$ '" >> /home/vagrant/.bashrc
 chown vagrant:vagrant /home/vagrant/.bashrc
 
 echo '. ~/.bashrc' >> /home/vagrant/.bash_profile
