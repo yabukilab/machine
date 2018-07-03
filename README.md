@@ -77,6 +77,8 @@ rmdir /S /Q machine
 
 構築：`sudo bash /vagrant/setup/lamp.sh`
 
+（スクリプトの改行コードがGitによってCRLFに変更されているとエラーになる。その場合は，`sudo apt install -y nkf; nkf -d --overwrite /vagrant/setup/*`で、改行コードをLFにする。
+
 動作確認：ホスト側のブラウザから[http://localhost/info.php](http://localhost/info.php)や[http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)（ユーザ名：root，パスワード：pass）にアクセスできることを確認する。
 
 メモ：ドキュメントルートは`/var/www/html`。ホスト側からは`c:/vagrant/machine/html`でアクセスできる。
