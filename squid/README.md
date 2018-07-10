@@ -6,15 +6,14 @@
 
 ```bash
 sudo apt install -y /vagrant/squid/*.deb
-
-echo "export http_proxy=localhost:3128" >> /home/vagrant/.bashrc
-echo "export https_proxy=localhost:3128" >> /home/vagrant/.bashrc
-source /home/vagrant/.bashrc
 ```
 
 ## 動作確認
 
 ```bash
+export http_proxy=localhost:3128
+export https_proxy=localhost:3128
+
 wget https://ja.wikipedia.org/wiki/湯川秀樹
 ```
 
