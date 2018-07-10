@@ -116,3 +116,7 @@ rmdir /S /Q machine
 * `jlab`でJupyterLabを起動する（`jlab`はalias）。
 
 ホスト側のブラウザで，http://localhost:8888 にアクセスし，「Password or token:」に`pass`と入力して利用する。使い方：式を入力してShift+Enter。
+
+#### スクレイピング
+
+[スクレイピングのためのプロキシサーバ](squid)
