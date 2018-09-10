@@ -35,8 +35,6 @@ cd vagrant
 git clone https://github.com/yabukilab/machine.git
 ```
 
-簡単な初期設定を`provision.sh`で行っている。「`echo 'Acquire::http::Proxy "http://10.100.192.4:3142/";' > /etc/apt/apt.conf.d/02proxy`」は研究室にあるパッケージのキャッシュサーバを利用するための設定だから，研究室外で使うときは，この行を削除（あるいはコメントアウト）しておく。
-
 ## 起動
 
 ```
@@ -66,6 +64,7 @@ rmdir /S /Q machine
 * 簡単な初期設定を`provision.sh`で行っている。起動後のカスタマイズはこのファイルで行う。
 * 仮想マシンのひな形（Box）の更新は`vagrant box update`。うまく動かないときはこれを試すといいかもしれない。
 * `C:/Users/ユーザ名/.vagrant.d/boxes/ubuntu-VAGRANTSLASH-xenial64/metadata_url`の中身が`https://vagrantcloud.com/ubuntu/xenial64`になっていないと，Boxの更新ができないかもしれない。（参考：https://github.com/hashicorp/vagrant/issues/9442 ）
+* 研究室で使うときは，`echo 'Acquire::http::Proxy "http://10.100.192.4:3142/";' | sudo tee /etc/apt/apt.conf.d/02proxy`を実行しておくと，研究室のキャッシュサーバを使うようになるため，`apt update`や`apt install`が速くなる。（以前は`provision.sh`にこの設定を書いていたが，家で作業する学生がハマる原因になっていたため，コメントアウトした。）
 
 ## 各種開発環境
 
