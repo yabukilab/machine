@@ -9,6 +9,8 @@ sudo apt install -y /vagrant/squid/*.deb
 
 echo 'export http_proxy=localhost:3128' >> ~/.bashrc
 echo 'export https_proxy=localhost:3128' >> ~/.bashrc
+echo 'export HTTP_PROXY=localhost:3128' >> ~/.bashrc
+echo 'export HTTPS_PROXY=localhost:3128' >> ~/.bashrc
 source ~/.bashrc
 ```
 
