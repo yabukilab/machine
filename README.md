@@ -25,7 +25,7 @@ vagrant plugin install vagrant-disksize
 
 ただし，Guest Additionの自動更新はVagrantfileで無効にしてあるため，共有フォルダが使えないなど，不具合が出た場合は，`vagrant vbguest --status`でバージョンの違いを確認し，`vagrant vbguest --do install`で更新，`vagrant vbguest --do start`で起動すること。
 
-仮想マシンを用意する。
+仮想マシンを用意する。（**[計算機環境の構築](https://github.com/yabukilab/main/blob/master/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%89.md)の「Git」の部分をやってから**）
 
 ```
 c:
