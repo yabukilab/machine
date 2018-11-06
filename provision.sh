@@ -14,6 +14,6 @@ chown vagrant:vagrant /home/vagrant/.bash_profile
 
 #for instant execution
 echo "alias R='R --no-save'" >> /home/vagrant/.bashrc
-echo "alias jnote='jupyter notebook --notebook-dir=/vagrant --no-browser --ip=0.0.0.0'" >> /home/vagrant/.bashrc
-echo "alias jlab='jupyter lab --notebook-dir=/vagrant --no-browser --ip=0.0.0.0'" >> /home/vagrant/.bashrc
+echo "alias jnote=\"jupyter notebook --notebook-dir=/vagrant --no-browser --ip=0.0.0.0 --NotebookApp.token=''\"" >> /home/vagrant/.bashrc
+echo "alias jlab=\"jupyter lab --notebook-dir=/vagrant --no-browser --ip=0.0.0.0 --NotebookApp.token=''\"" >> /home/vagrant/.bashrc
 echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> /home/vagrant/.bash_profile
